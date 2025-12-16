@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Sterling Residence | Luxury Villa, Events & Celebrations</title>
+<meta name="description" content="The Sterling Residence is a luxury private villa for stays, events, parties, holidays and exclusive celebrations. Designed for unforgettable moments.">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* =====================================================
+   GLOBAL RESET & VARIABLES
+===================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+:root {
+  --black: #0b0b0b;
+  --black-soft: #141414;
+  --silver: #e6e6e6;
+  --silver-muted: #b8b8b8;
+  --silver-dark: #8a8a8a;
+  --gold: #d4af37;
+  --holiday-red: #b11226;
+  --holiday-green: #1e7f52;
+  --white: #ffffff;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--black);
+  color: var(--silver);
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: min(1200px, 92%);
+  margin: auto;
+}
+
+/* =====================================================
+   HEADER & NAV
+===================================================== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  backdrop-filter: blur(14px);
+  background: rgba(11,11,11,0.9);
+  border-bottom: 1px solid rgba(212,175,55,0.25);
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+  color: var(--silver);
+}
+
+.logo img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(212,175,55,0.4);
+}
+
+.logo span {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.22rem;
+  font-size: 0.85rem;
+}
+
+nav {
+  display: flex;
+  gap: 1.8rem;
+}
+
+nav a {
+  color: var(--silver-muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+}
+
+nav a:hover {
+  color: var(--gold);
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: grid;
+  align-items: center;
+  padding: 6rem 0;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(120deg, rgba(0,0,0,0.85), rgba(0,0,0,0.55)),
+    url('hero-main.jpg') center / cover no-repeat;
+  z-index: -2;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,0.95));
+  z-index: -1;
+}
+
+.hero-content {
+  max-width: 720px;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid rgba(212,175,55,0.5);
+  color: var(--gold);
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  margin-bottom: 1.6rem;
+}
+
+.hero h1 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  line-height: 1.1;
+  margin-bottom: 1.6rem;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  color: var(--silver-muted);
+  margin-bottom: 2.2rem;
+}
+
+.cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 0.9rem 1.9rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--gold), rgba(212,175,55,0.6));
+  color: var(--black);
+}
+
+.btn-secondary {
+  border: 1px solid rgba(212,175,55,0.4);
+  color: var(--silver);
+}
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+section {
+  padding: 6rem 0;
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+section h2 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  margin-bottom: 1.4rem;
+}
+
+.section-intro {
+  max-width: 720px;
+  color: var(--silver-muted);
+}
+
+/* =====================================================
+   ABOUT / EXPERIENCE
+===================================================== */
+.about {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  gap: 3rem;
+  align-items: center;
+}
+
+.about img {
+  border-radius: 22px;
+  border: 1px solid rgba(212,175,55,0.2);
+  box-shadow: 0 30px 90px rgba(0,0,0,0.6);
+}
+
+/* =====================================================
+   FACILITIES
+===================================================== */
+.facilities-grid {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 1.8rem;
+}
+
+.facility-card {
+  position: relative;
+  min-height: 320px;
+  border-radius: 22px;
+  overflow: hidden;
+  padding: 1.6rem;
+  display: flex;
+  align-items: flex-end;
+  border: 1px solid rgba(212,175,55,0.15);
+}
+
+.facility-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.45;
+  background-size: cover;
+  background-position: center;
+}
+
+.facility-card:nth-child(1)::before { background-image: url('pool.jpg'); }
+.facility-card:nth-child(2)::before { background-image: url('luxury-suite-2.jpg'); }
+.facility-card:nth-child(3)::before { background-image: url('gallery-2.jpg'); }
+.facility-card:nth-child(4)::before { background-image: url('luxury-suite-3.jpg'); }
+
+.facility-content {
+  position: relative;
+}
+
+.facility-content h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+/* =====================================================
+   EVENTS & CELEBRATIONS
+===================================================== */
+.events {
+  background: var(--black-soft);
+}
+
+.events-grid {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 1.8rem;
+}
+
+.event-card {
+  background: rgba(255,255,255,0.03);
+  border-radius: 22px;
+  padding: 2rem;
+  border: 1px solid rgba(212,175,55,0.18);
+}
+
+.event-card h3 {
+  margin-bottom: 0.8rem;
+  color: var(--gold);
+}
+
+/* =====================================================
+   GALLERY
+===================================================== */
+.gallery-grid {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 1.4rem;
+}
+
+.gallery-grid figure {
+  border-radius: 22px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(212,175,55,0.15);
+}
+
+.gallery-grid img {
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-grid figure:hover img {
+  transform: scale(1.06);
+}
+
+/* =====================================================
+   BOOKING
+===================================================== */
+.booking {
+  background: linear-gradient(160deg, rgba(0,0,0,0.9), rgba(20,20,20,0.9));
+}
+
+.booking-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  gap: 3rem;
+  align-items: center;
+}
+
+.booking-card {
+  border-radius: 24px;
+  padding: 2.4rem;
+  border: 1px solid rgba(212,175,55,0.3);
+}
+
+.booking-card h3 {
+  margin-bottom: 1rem;
+}
+
+.booking-details span {
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+footer {
+  padding: 4rem 0 2rem;
+  background: var(--black-soft);
+  border-top: 1px solid rgba(212,175,55,0.2);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 2.5rem;
+}
+
+.footer small {
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: var(--silver-dark);
+}
+
+/* =====================================================
+   WHATSAPP FLOAT
+===================================================== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: #fff;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.9rem;
+  z-index: 999;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container top-bar">
+    <a href="#hero" class="logo">
+      <img src="logo.jpg" alt="Sterling Residence logo">
+      <span>THE STERLING RESIDENCE</span>
+    </a>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#experience">Experience</a>
+      <a href="#events">Events</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#booking">Book</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="hero">
+  <div class="container hero-content">
+    <span class="hero-badge">🎄 Holiday Bookings • 🥂 New Year Buyouts</span>
+    <h1>Luxury stays.<br>Legendary celebrations.</h1>
+    <p>A private residence designed for elevated living, unforgettable parties and exclusive events.</p>
+    <div class="cta-group">
+      <a class="btn-primary" href="https://wa.me/2349067297600?text=Hello%20Sterling%20Residence%20Team%2C%0A%0AI%20would%20like%20to%20make%20a%20booking.%0A%0A•%20Name:%0A•%20Booking%20Type:%0A•%20Date(s):%0A•%20Guests:%0A•%20Special%20Requests:%0A" target="_blank">Book via WhatsApp</a>
+      <a class="btn-secondary" href="#gallery">View Gallery</a>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container about">
+    <div>
+      <span class="section-tag">The vibe</span>
+      <h2>Designed for moments that matter</h2>
+      <p class="section-intro">
+        The Sterling Residence blends luxury accommodation with high-energy celebration spaces,
+        creating an environment where memories are made effortlessly.
+      </p>
+    </div>
+    <img src="luxury-suite-1.jpg" alt="Luxury interior">
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section class="events" id="events">
+  <div class="container">
+    <span class="section-tag">Celebrations</span>
+    <h2>Events worth remembering</h2>
+
+    <div class="events-grid">
+      <div class="event-card"><h3>Private Parties</h3><p>Birthdays, after-parties and intimate nights.</p></div>
+      <div class="event-card"><h3>Corporate Retreats</h3><p>Executive stays and brand activations.</p></div>
+      <div class="event-card"><h3>Holiday Takeovers</h3><p>Christmas, New Year & festive escapes.</p></div>
+      <div class="event-card"><h3>Content Shoots</h3><p>Photoshoots, reels and creative productions.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="container">
+    <span class="section-tag">Visual tour</span>
+    <h2>Every angle tells a story</h2>
+    <div class="gallery-grid">
+      <figure><img src="gallery-1.jpg"></figure>
+      <figure><img src="gallery-2.jpg"></figure>
+      <figure><img src="pool.jpg"></figure>
+      <figure><img src="luxury-suite-2.jpg"></figure>
+      <figure><img src="luxury-suite-3.jpg"></figure>
+      <figure><img src="holiday-christmas-1.jpg"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="booking" id="booking">
+  <div class="container booking-grid">
+    <div class="booking-card">
+      <h3>Reserve your date</h3>
+      <p>Reach out via WhatsApp and receive a tailored proposal.</p>
+      <div class="booking-details">
+        <span>📞 WhatsApp Concierge</span>
+        <span>📍 The Sterling Way, off Federal Secretariat, Alagbaka, Akure 340106, Ondo</span>
+        <span>🕐 Flexible bookings</span>
+      </div>
+      <a class="btn-primary" href="https://wa.me/2349067297600" target="_blank">Chat on WhatsApp</a>
+    </div>
+    <img src="luxury-suite-1.jpg" alt="Booking visual">
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <img src="logo.jpg" width="60">
+      <small>THE STERLING RESIDENCE</small>
+    </div>
+    <div>
+      <p>Luxury • Celebration • Experience</p>
+    </div>
+  </div>
+  <div class="container" style="text-align:center;margin-top:2rem;font-size:0.7rem;">
+    © 2025 The Sterling Residence. All Rights Reserved.
+  </div>
+</footer>
+
+<a href="https://wa.me/2349067297600" target="_blank" class="whatsapp-float">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+</body>
+</html>
